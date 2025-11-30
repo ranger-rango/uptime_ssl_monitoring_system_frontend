@@ -312,8 +312,8 @@ th, td {
 .dashboard-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-  column-gap: 2.3rem;
-  row-gap: 1.3rem;
+  column-gap: 1.3rem;
+  row-gap: 1rem;
 }
 
 .dash-section-heading {
