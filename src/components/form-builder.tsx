@@ -12,7 +12,7 @@ type FormValues = Record<string, any>
 
 export default function FormBuilder({endpoint, authToken, method, responseHandler, formSchema } : FormBuilderProps)
 {
-    const { register, handleSubmit, formState : { errors } } = useForm<FormValues>(
+    const { register, handleSubmit, formState : { errors }, reset } = useForm<FormValues>(
         {
             mode : "all"
         }
@@ -33,6 +33,7 @@ export default function FormBuilder({endpoint, authToken, method, responseHandle
                 onSuccess: (responseData) => 
                 {
                     responseHandler?.(responseData)
+                    reset()
                 }
             }
         )
@@ -175,7 +176,7 @@ export default function FormBuilder({endpoint, authToken, method, responseHandle
                     renderLayout(formSchema.layout)
                 }
                 <div className="form-btns-container">
-                    <button type="reset" className="sec-btn">Clear</button>
+                    <button type="button" className="sec-btn" onClick={() => reset()}>Clear</button>
                     <button type="submit" className="pri-btn">Submit</button>
                 </div>
 

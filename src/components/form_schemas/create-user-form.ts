@@ -39,7 +39,7 @@ export const createUserFormSchema : any = {
             label: "Email Address",
             renderer: "text",
             inputType: "email",
-            placeholder: "you@example.com",
+            placeholder: "you@example.com (registration link sent here)",
             rules: {
                 required: "Email Address is required",
                 pattern: {
